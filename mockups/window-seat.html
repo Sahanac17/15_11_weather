@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Window Seat mockup</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#eef2f7;color:#233;padding:24px 16px 56px}
+.head{max-width:1400px;margin:0 auto 20px}
+.head h1{font-size:28px;margin-bottom:6px}
+.head p{color:#556;line-height:1.5;max-width:720px}
+.section{max-width:1400px;margin:28px auto 14px;font-size:20px}
+.row{display:flex;flex-wrap:wrap;gap:28px;max-width:1400px;margin:0 auto}
+figure{display:flex;flex-direction:column;gap:10px}
+figcaption{font-weight:700;font-size:14px;color:#445}
+.bezel{background:#1b1f27;border:10px solid #1b1f27;overflow:hidden}
+.bezel.phone{border-radius:38px}
+.bezel.laptop{border-radius:14px 14px 0 0;border-bottom-width:14px}
+.base{height:10px;background:#c9ced6;border-radius:0 0 14px 14px;margin:-10px -22px 0}
+.screen{position:relative;overflow:hidden}
+.screen.phone{width:280px;height:540px;border-radius:28px}
+.screen.laptop{width:640px;height:380px;border-radius:4px}
+input,button{font:inherit;border:0;outline:0}
+ul{list-style:none}
+
+.screen{font-family:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold","Varela Round",Nunito,Quicksand,system-ui,sans-serif;color:#fff;background:linear-gradient(180deg,#0f2a5c 0%,#2a5fa8 55%,#9cc8f0 100%)}
+.glow{position:absolute;left:50%;bottom:-60px;width:360px;height:220px;margin-left:-180px;background:radial-gradient(ellipse at center,rgba(255,255,255,.55),transparent 70%)}
+.wrap{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.phone .wrap{padding:30px 16px}.laptop .wrap{padding:26px 40px;max-width:640px;margin:0 auto}
+.wrap h1{font-size:20px;font-weight:600;letter-spacing:2px;opacity:.9}.laptop .wrap h1{font-size:24px}
+.search{display:flex;width:100%;gap:8px}
+.search input{flex:1;min-width:0;padding:11px 18px;border-radius:999px;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.search input::placeholder{color:rgba(255,255,255,.7)}
+.search button{padding:11px 18px;border-radius:999px;background:#fff;color:#1f4a8a;font-weight:700}
+.msg{margin-top:14px;font-size:18px;opacity:.95}
+.card{width:100%}
+.card h2{font-size:22px;font-weight:600}.time{font-size:12px;opacity:.8;margin-top:3px}
+.big{display:flex;flex-direction:column;align-items:center;margin:8px 0 0}
+.icon{font-size:54px;line-height:1.1;filter:drop-shadow(0 0 18px rgba(255,235,150,.9))}
+.temp{font-size:64px;font-weight:300;line-height:1}
+.desc{margin-top:6px;opacity:.95}
+.facts{margin-top:16px;display:flex;justify-content:center;gap:8px}
+.facts li{width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;line-height:1.2;padding:4px}
+.facts span{opacity:.8;font-size:11px}.facts b{font-weight:700}
+.laptop .card.result{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10px}.laptop .facts{margin-top:0;gap:10px}.laptop .facts li{width:80px;height:80px;font-size:13px}
+.phone .card.result{padding-top:4px}
+.notfound .icon{font-size:42px;display:block;margin-bottom:6px;filter:none}
+.notfound p{opacity:.85;margin-top:4px;font-size:14px}
+</style></head><body>
+<div class="head"><h1>Window Seat</h1><p>Night-to-dawn blue, big soft text right on the page and round see-through bubbles for the details. Mockup only: nothing here works yet, and the weather values are made up.</p></div>
+<h2 class="section">Phone-sized screen</h2><div class="row">
+<figure><figcaption>1. Before searching</figcaption><div class="bezel phone"><div class="screen phone"><div class="glow"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+</main></div></div></figure>
+<figure><figcaption>2. Loading</figcaption><div class="bezel phone"><div class="screen phone"><div class="glow"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="Paris" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<p class="msg">Loading...</p></main></div></div></figure>
+<figure><figcaption>3. Weather result</figcaption><div class="bezel phone"><div class="screen phone"><div class="glow"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="London" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<section class="card result">
+<div class="left"><h2>London, United Kingdom</h2><p class="time">Local time: Sat 15 Nov, 14:32</p>
+<div class="big"><span class="icon">&#9925;</span><span class="temp">24&deg;C</span></div><p class="desc">Partly cloudy</p></div>
+<ul class="facts"><li><span>Feels like</span><b>25&deg;C</b></li><li><span>Humidity</span><b>58%</b></li><li><span>Wind</span><b>14 km/h NW</b></li></ul>
+</section></main></div></div></figure>
+<figure><figcaption>4. City not found</figcaption><div class="bezel phone"><div class="screen phone"><div class="glow"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="Londno" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<section class="card notfound"><div class="icon">&#128270;</div><h2>Hmm, we couldn't find that city</h2><p>Check the spelling and try again.</p></section></main></div></div></figure>
+</div>
+<h2 class="section">Laptop-sized screen</h2><div class="row">
+<figure><figcaption>1. Before searching</figcaption><div class="bezel laptop"><div class="screen laptop"><div class="glow"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+</main></div></div><div class="base"></div></figure>
+<figure><figcaption>2. Loading</figcaption><div class="bezel laptop"><div class="screen laptop"><div class="glow"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="Paris" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<p class="msg">Loading...</p></main></div></div><div class="base"></div></figure>
+<figure><figcaption>3. Weather result</figcaption><div class="bezel laptop"><div class="screen laptop"><div class="glow"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="London" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<section class="card result">
+<div class="left"><h2>London, United Kingdom</h2><p class="time">Local time: Sat 15 Nov, 14:32</p>
+<div class="big"><span class="icon">&#9925;</span><span class="temp">24&deg;C</span></div><p class="desc">Partly cloudy</p></div>
+<ul class="facts"><li><span>Feels like</span><b>25&deg;C</b></li><li><span>Humidity</span><b>58%</b></li><li><span>Wind</span><b>14 km/h NW</b></li></ul>
+</section></main></div></div><div class="base"></div></figure>
+<figure><figcaption>4. City not found</figcaption><div class="bezel laptop"><div class="screen laptop"><div class="glow"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="Londno" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<section class="card notfound"><div class="icon">&#128270;</div><h2>Hmm, we couldn't find that city</h2><p>Check the spelling and try again.</p></section></main></div></div><div class="base"></div></figure>
+</div></body></html>

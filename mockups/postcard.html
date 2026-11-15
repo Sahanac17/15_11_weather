@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postcard mockup</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#eef2f7;color:#233;padding:24px 16px 56px}
+.head{max-width:1400px;margin:0 auto 20px}
+.head h1{font-size:28px;margin-bottom:6px}
+.head p{color:#556;line-height:1.5;max-width:720px}
+.section{max-width:1400px;margin:28px auto 14px;font-size:20px}
+.row{display:flex;flex-wrap:wrap;gap:28px;max-width:1400px;margin:0 auto}
+figure{display:flex;flex-direction:column;gap:10px}
+figcaption{font-weight:700;font-size:14px;color:#445}
+.bezel{background:#1b1f27;border:10px solid #1b1f27;overflow:hidden}
+.bezel.phone{border-radius:38px}
+.bezel.laptop{border-radius:14px 14px 0 0;border-bottom-width:14px}
+.base{height:10px;background:#c9ced6;border-radius:0 0 14px 14px;margin:-10px -22px 0}
+.screen{position:relative;overflow:hidden}
+.screen.phone{width:280px;height:540px;border-radius:28px}
+.screen.laptop{width:640px;height:380px;border-radius:4px}
+input,button{font:inherit;border:0;outline:0}
+ul{list-style:none}
+
+.screen{font-family:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold","Varela Round",Nunito,Quicksand,system-ui,sans-serif;color:#4a3b2a;background:linear-gradient(180deg,#2b6fb0 0%,#4f9bd6 60%,#8cc4ea 100%)}
+.waves{position:absolute;left:0;right:0;bottom:0;height:70px;background:repeating-radial-gradient(circle at 20px 70px,transparent 0 14px,rgba(255,255,255,.18) 14px 16px)}
+.wrap{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;gap:18px}
+.phone .wrap{padding:26px 16px}.laptop .wrap{padding:22px 40px;max-width:600px;margin:0 auto;gap:14px}
+.wrap h1{font-size:22px;color:#fff6e4;letter-spacing:3px;text-transform:uppercase}.laptop .wrap h1{font-size:26px}
+.search{display:flex;width:100%;background:#fff6e4;border-radius:12px;padding:5px;gap:6px;box-shadow:0 4px 0 rgba(0,0,0,.15)}
+.search input{flex:1;min-width:0;padding:9px 12px;background:transparent;color:#4a3b2a}
+.search input::placeholder{color:#a89677}
+.search button{padding:9px 16px;border-radius:9px;background:#d9503f;color:#fff;font-weight:700;letter-spacing:.5px}
+.msg{color:#fff6e4;font-weight:700;font-size:16px;margin-top:10px}
+.card{position:relative;width:100%;background:#fff6e4;border:3px dashed #c9a96e;outline:6px solid #fff6e4;outline-offset:0;border-radius:6px;padding:20px 18px;transform:rotate(-2deg);box-shadow:0 12px 24px rgba(0,0,0,.25);margin-top:6px}
+.card h2{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;font-size:19px;color:#3a2d1c;padding-right:62px}
+.time{font-size:12px;color:#8a7757;margin-top:4px;padding-right:62px}
+.big{margin:12px 0 2px}
+.icon{position:absolute;top:12px;right:12px;width:52px;height:60px;display:flex;align-items:center;justify-content:center;font-size:28px;background:#fff;border:2px dashed #d9503f;border-radius:4px;transform:rotate(3deg)}
+.temp{font-size:50px;font-weight:800;color:#d9503f}
+.desc{font-weight:700;color:#4a3b2a}
+.facts{margin-top:12px;border-top:2px dotted #c9a96e;padding-top:10px;display:grid;gap:6px}
+.facts li{display:flex;justify-content:space-between;font-size:14px}.facts span{color:#8a7757}
+.laptop .card.result{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:center}
+.laptop .facts{margin-top:0;border-top:0;border-left:2px dotted #c9a96e;padding:56px 0 0 18px}
+.notfound .icon{position:static;margin:0 auto 8px;transform:rotate(-3deg)}
+.notfound h2{padding-right:0;text-align:center}.notfound p{text-align:center;color:#8a7757;font-size:14px;margin-top:6px}
+</style></head><body>
+<div class="head"><h1>Postcard</h1><p>A deep-blue seaside page with a tilted cream postcard and a little stamp. Mockup only: nothing here works yet, and the weather values are made up.</p></div>
+<h2 class="section">Phone-sized screen</h2><div class="row">
+<figure><figcaption>1. Before searching</figcaption><div class="bezel phone"><div class="screen phone"><div class="waves"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+</main></div></div></figure>
+<figure><figcaption>2. Loading</figcaption><div class="bezel phone"><div class="screen phone"><div class="waves"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="Paris" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<p class="msg">Loading...</p></main></div></div></figure>
+<figure><figcaption>3. Weather result</figcaption><div class="bezel phone"><div class="screen phone"><div class="waves"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="London" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<section class="card result">
+<div class="left"><h2>London, United Kingdom</h2><p class="time">Local time: Sat 15 Nov, 14:32</p>
+<div class="big"><span class="icon">&#9925;</span><span class="temp">24&deg;C</span></div><p class="desc">Partly cloudy</p></div>
+<ul class="facts"><li><span>Feels like</span><b>25&deg;C</b></li><li><span>Humidity</span><b>58%</b></li><li><span>Wind</span><b>14 km/h NW</b></li></ul>
+</section></main></div></div></figure>
+<figure><figcaption>4. City not found</figcaption><div class="bezel phone"><div class="screen phone"><div class="waves"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="Londno" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<section class="card notfound"><div class="icon">&#128270;</div><h2>Hmm, we couldn't find that city</h2><p>Check the spelling and try again.</p></section></main></div></div></figure>
+</div>
+<h2 class="section">Laptop-sized screen</h2><div class="row">
+<figure><figcaption>1. Before searching</figcaption><div class="bezel laptop"><div class="screen laptop"><div class="waves"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+</main></div></div><div class="base"></div></figure>
+<figure><figcaption>2. Loading</figcaption><div class="bezel laptop"><div class="screen laptop"><div class="waves"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="Paris" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<p class="msg">Loading...</p></main></div></div><div class="base"></div></figure>
+<figure><figcaption>3. Weather result</figcaption><div class="bezel laptop"><div class="screen laptop"><div class="waves"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="London" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<section class="card result">
+<div class="left"><h2>London, United Kingdom</h2><p class="time">Local time: Sat 15 Nov, 14:32</p>
+<div class="big"><span class="icon">&#9925;</span><span class="temp">24&deg;C</span></div><p class="desc">Partly cloudy</p></div>
+<ul class="facts"><li><span>Feels like</span><b>25&deg;C</b></li><li><span>Humidity</span><b>58%</b></li><li><span>Wind</span><b>14 km/h NW</b></li></ul>
+</section></main></div></div><div class="base"></div></figure>
+<figure><figcaption>4. City not found</figcaption><div class="bezel laptop"><div class="screen laptop"><div class="waves"></div><main class="wrap"><h1>Weather App</h1>
+<div class="search"><input value="Londno" placeholder="Type a city name..." readonly><button type="button">Search</button></div>
+<section class="card notfound"><div class="icon">&#128270;</div><h2>Hmm, we couldn't find that city</h2><p>Check the spelling and try again.</p></section></main></div></div><div class="base"></div></figure>
+</div></body></html>
