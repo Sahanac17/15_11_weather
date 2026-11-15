@@ -7,7 +7,7 @@
 body {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Varela Round", Nunito, Quicksand, system-ui, sans-serif;
   color: #fff;
   background: linear-gradient(180deg, #0f2a5c 0%, #2a5fa8 55%, #9cc8f0 100%);
@@ -16,11 +16,11 @@ body {
 .glow {
   position: absolute;
   left: 50%;
-  bottom: -60px;
+  bottom: 0;
   width: 360px;
-  height: 220px;
+  height: 160px;
   margin-left: -180px;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.55), transparent 70%);
+  background: radial-gradient(ellipse 254px 156px at 50% 110px, rgba(255, 255, 255, 0.55), transparent 70%);
 }
 
 .wrap {
@@ -76,6 +76,88 @@ h1 {
   cursor: pointer;
 }
 
+.message {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.result {
+  width: 100%;
+  padding-top: 4px;
+}
+
+.result[hidden] {
+  display: none;
+}
+
+.result h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.time {
+  margin-top: 3px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.big img {
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0 0 18px rgba(255, 235, 150, 0.9));
+}
+
+.temp {
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.desc {
+  margin-top: 6px;
+  opacity: 0.95;
+}
+
+.facts {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.facts li {
+  width: 76px;
+  height: 76px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 1.2;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.facts span {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.facts b {
+  font-weight: 700;
+}
+
 @media (min-width: 700px) {
   .wrap {
     padding: 26px 40px;
@@ -83,5 +165,23 @@ h1 {
 
   h1 {
     font-size: 24px;
+  }
+
+  .result {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .facts {
+    margin-top: 0;
+    gap: 10px;
+  }
+
+  .facts li {
+    width: 80px;
+    height: 80px;
+    font-size: 13px;
   }
 }
